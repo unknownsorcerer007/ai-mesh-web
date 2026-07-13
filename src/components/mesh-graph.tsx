@@ -74,9 +74,9 @@ export function MeshGraph({ className }: { className?: string }) {
       >
         <defs>
           <radialGradient id="mesh-bg-glow" cx="210" cy="210" r="180">
-            <stop offset="0%" stopColor="oklch(0.78 0.17 165)" stopOpacity="0.18" />
-            <stop offset="60%" stopColor="oklch(0.78 0.17 165)" stopOpacity="0.04" />
-            <stop offset="100%" stopColor="oklch(0.78 0.17 165)" stopOpacity="0" />
+            <stop offset="0%" stopColor="oklch(0.52 0.13 165)" stopOpacity="0.18" />
+            <stop offset="60%" stopColor="oklch(0.52 0.13 165)" stopOpacity="0.04" />
+            <stop offset="100%" stopColor="oklch(0.52 0.13 165)" stopOpacity="0" />
           </radialGradient>
           <filter id="packet-glow" x="-100%" y="-100%" width="300%" height="300%">
             <feGaussianBlur stdDeviation="2.4" result="b" />
@@ -86,8 +86,8 @@ export function MeshGraph({ className }: { className?: string }) {
             </feMerge>
           </filter>
           <linearGradient id="edge-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="oklch(0.78 0.17 165)" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="oklch(0.78 0.17 165)" stopOpacity="0.12" />
+            <stop offset="0%" stopColor="oklch(0.52 0.13 165)" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="oklch(0.52 0.13 165)" stopOpacity="0.12" />
           </linearGradient>
         </defs>
 
@@ -95,7 +95,7 @@ export function MeshGraph({ className }: { className?: string }) {
         <circle cx={CX} cy={CY} r="180" fill="url(#mesh-bg-glow)" />
 
         {/* edges */}
-        <g stroke="oklch(0.78 0.17 165)" strokeOpacity="0.22" strokeWidth="1">
+        <g stroke="oklch(0.52 0.13 165)" strokeOpacity="0.22" strokeWidth="1">
           {EDGES.map(([a, b], i) => (
             <line
               key={i}
@@ -114,7 +114,7 @@ export function MeshGraph({ className }: { className?: string }) {
               cx={n.x}
               cy={n.y}
               r={n.r + 5}
-              fill="oklch(0.78 0.17 165)"
+              fill="oklch(0.52 0.13 165)"
               fillOpacity={0.12}
               animate={reduce ? { opacity: 0.12 } : { opacity: [0.06, 0.22, 0.06], scale: [0.9, 1.15, 0.9] }}
               transition={
@@ -128,7 +128,7 @@ export function MeshGraph({ className }: { className?: string }) {
               cx={n.x}
               cy={n.y}
               r={n.r}
-              fill="oklch(0.78 0.17 165)"
+              fill="oklch(0.52 0.13 165)"
               animate={reduce ? {} : { opacity: [0.7, 1, 0.7] }}
               transition={
                 reduce
@@ -146,7 +146,7 @@ export function MeshGraph({ className }: { className?: string }) {
           cy={CY}
           r={RELAY.r + 8}
           fill="none"
-          stroke="oklch(0.78 0.17 165)"
+          stroke="oklch(0.52 0.13 165)"
           strokeOpacity={0.4}
           strokeWidth={1}
           animate={reduce ? {} : { scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
@@ -157,14 +157,14 @@ export function MeshGraph({ className }: { className?: string }) {
           cx={CX}
           cy={CY}
           r={RELAY.r + 3}
-          fill="oklch(0.78 0.17 165)"
+          fill="oklch(0.52 0.13 165)"
           fillOpacity={0.15}
-          stroke="oklch(0.78 0.17 165)"
+          stroke="oklch(0.52 0.13 165)"
           strokeOpacity={0.6}
           strokeWidth={1}
         />
-        <circle cx={CX} cy={CY} r={RELAY.r - 3} fill="oklch(0.78 0.17 165)" />
-        <circle cx={CX} cy={CY} r={RELAY.r - 6} fill="oklch(0.96 0.01 165)" fillOpacity={0.85} />
+        <circle cx={CX} cy={CY} r={RELAY.r - 3} fill="oklch(0.52 0.13 165)" />
+        <circle cx={CX} cy={CY} r={RELAY.r - 6} fill="oklch(0.99 0.004 165)" fillOpacity={0.85} />
 
         {/* data packets traveling along edges */}
         {!reduce &&
@@ -175,7 +175,7 @@ export function MeshGraph({ className }: { className?: string }) {
               <motion.circle
                 key={i}
                 r={3}
-                fill="oklch(0.85 0.19 165)"
+                fill="oklch(0.45 0.15 165)"
                 filter="url(#packet-glow)"
                 initial={{ cx: a.x, cy: a.y, opacity: 0 }}
                 animate={{

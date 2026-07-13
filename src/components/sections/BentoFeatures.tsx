@@ -27,7 +27,7 @@ function TopologyMini() {
   const c = { x: 60, y: 50 };
   return (
     <svg viewBox="0 0 120 100" className="w-full h-16" aria-hidden="true">
-      <g stroke="oklch(0.78 0.17 165)" strokeOpacity="0.3" strokeWidth="1">
+      <g stroke="oklch(0.52 0.13 165)" strokeOpacity="0.3" strokeWidth="1">
         {nodes.map((n, i) => (
           <line key={i} x1={c.x} y1={c.y} x2={n.x} y2={n.y} />
         ))}
@@ -37,10 +37,10 @@ function TopologyMini() {
         <line x1="90" y1="30" x2="90" y2="70" />
       </g>
       {nodes.map((n, i) => (
-        <circle key={i} cx={n.x} cy={n.y} r="3.5" fill="oklch(0.78 0.17 165)" fillOpacity="0.7" />
+        <circle key={i} cx={n.x} cy={n.y} r="3.5" fill="oklch(0.52 0.13 165)" fillOpacity="0.7" />
       ))}
-      <circle cx={c.x} cy={c.y} r="5.5" fill="oklch(0.78 0.17 165)" fillOpacity="0.2" stroke="oklch(0.78 0.17 165)" strokeWidth="1" />
-      <circle cx={c.x} cy={c.y} r="2.5" fill="oklch(0.78 0.17 165)" />
+      <circle cx={c.x} cy={c.y} r="5.5" fill="oklch(0.52 0.13 165)" fillOpacity="0.2" stroke="oklch(0.52 0.13 165)" strokeWidth="1" />
+      <circle cx={c.x} cy={c.y} r="2.5" fill="oklch(0.52 0.13 165)" />
     </svg>
   );
 }

@@ -23,9 +23,9 @@ export function Nav() {
       initial={false}
       animate={{
         backgroundColor: scrolled
-          ? "oklch(0.145 0.005 165 / 0.72)"
-          : "oklch(0.145 0.005 165 / 0)",
-        borderColor: scrolled ? "oklch(1 0 0 / 0.08)" : "oklch(1 0 0 / 0)",
+          ? "oklch(0.985 0.004 165 / 0.82)"
+          : "oklch(0.985 0.004 165 / 0)",
+        borderColor: scrolled ? "oklch(0.88 0.008 165)" : "oklch(0.88 0.008 165 / 0)",
       }}
       transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
       className="fixed top-0 inset-x-0 z-50 border-b"

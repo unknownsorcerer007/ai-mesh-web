@@ -49,61 +49,63 @@
 }
 
 /*
-  AI Mesh design system.
-  Register: Brand (landing page for an open-source developer infrastructure tool).
-  Theme: dark-native, warm-tinted near-black canvas, signal-emerald accent.
-  Strategy: Committed (emerald carries the mesh visual + CTAs; tinted neutrals elsewhere).
-  No pure black, no pure white. Accent used ≤2x per screen outside the mesh visual.
+  AI Mesh design system — LIGHT theme (v2).
+  Register: Brand. Strategy: Restrained (emerald accent ≤10%, tinted neutrals carry the page).
+  Palette: warm off-white canvas (chroma 0.004 toward hue 165), deeper emerald accent
+  for 4.5:1+ contrast on light. No pure white, no pure black.
+  impeccable light rules: tinted neutrals toward THIS brand's hue, reduce chroma
+  toward extremes, build a 3-step surface scale.
 */
 :root {
   --radius: 0.75rem;
 
-  /* Warm near-black canvas (chroma 0.005 toward hue 165, the emerald family) */
-  --background: oklch(0.145 0.005 165);
-  --foreground: oklch(0.96 0.006 165);
+  /* Warm off-white canvas (NOT pure white — chroma 0.004 toward hue 165) */
+  --background: oklch(0.985 0.004 165);
+  --foreground: oklch(0.21 0.02 165);
 
-  /* Elevated surface, one step lighter */
-  --card: oklch(0.185 0.006 165);
-  --card-foreground: oklch(0.96 0.006 165);
-  --popover: oklch(0.185 0.006 165);
-  --popover-foreground: oklch(0.96 0.006 165);
+  /* Surface scale — elevated card, slightly cooler-neutral than bg */
+  --card: oklch(1 0.003 165);
+  --card-foreground: oklch(0.21 0.02 165);
+  --popover: oklch(1 0.003 165);
+  --popover-foreground: oklch(0.21 0.02 165);
 
-  /* Primary = accent = signal emerald. Dark text on emerald at 4.5:1+. */
-  --primary: oklch(0.78 0.17 165);
-  --primary-foreground: oklch(0.16 0.03 165);
+  /* Primary = accent = deeper emerald (contrast ≥4.5:1 on light bg) */
+  --primary: oklch(0.52 0.13 165);
+  --primary-foreground: oklch(0.99 0.004 165);
 
-  --secondary: oklch(0.225 0.006 165);
-  --secondary-foreground: oklch(0.96 0.006 165);
+  /* Secondary surface — muted panel */
+  --secondary: oklch(0.955 0.006 165);
+  --secondary-foreground: oklch(0.28 0.02 165);
 
-  --muted: oklch(0.225 0.006 165);
-  --muted-foreground: oklch(0.7 0.008 165);
+  --muted: oklch(0.955 0.006 165);
+  --muted-foreground: oklch(0.5 0.012 165);
 
-  --accent: oklch(0.78 0.17 165);
-  --accent-foreground: oklch(0.16 0.03 165);
+  --accent: oklch(0.52 0.13 165);
+  --accent-foreground: oklch(0.99 0.004 165);
 
-  --destructive: oklch(0.637 0.217 22.4);
+  --destructive: oklch(0.55 0.22 25);
 
-  /* Semi-transparent white borders (open-design craft rule for dark themes) */
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.78 0.17 165);
+  /* Tinted borders (not pure gray) */
+  --border: oklch(0.88 0.008 165);
+  --input: oklch(0.88 0.008 165);
+  --ring: oklch(0.52 0.13 165);
 
-  --chart-1: oklch(0.78 0.17 165);
-  --chart-2: oklch(0.7 0.12 195);
-  --chart-3: oklch(0.72 0.14 140);
-  --chart-4: oklch(0.75 0.15 90);
-  --chart-5: oklch(0.65 0.13 250);
+  --chart-1: oklch(0.52 0.13 165);
+  --chart-2: oklch(0.5 0.1 195);
+  --chart-3: oklch(0.55 0.12 140);
+  --chart-4: oklch(0.6 0.13 90);
+  --chart-5: oklch(0.5 0.13 280);
 
-  --sidebar: oklch(0.185 0.006 165);
-  --sidebar-foreground: oklch(0.96 0.006 165);
-  --sidebar-primary: oklch(0.78 0.17 165);
-  --sidebar-primary-foreground: oklch(0.16 0.03 165);
-  --sidebar-accent: oklch(0.225 0.006 165);
-  --sidebar-accent-foreground: oklch(0.96 0.006 165);
-  --sidebar-border: oklch(1 0 0 / 8%);
-  --sidebar-ring: oklch(0.78 0.17 165);
+  --sidebar: oklch(0.955 0.006 165);
+  --sidebar-foreground: oklch(0.21 0.02 165);
+  --sidebar-primary: oklch(0.52 0.13 165);
+  --sidebar-primary-foreground: oklch(0.99 0.004 165);
+  --sidebar-accent: oklch(0.92 0.01 165);
+  --sidebar-accent-foreground: oklch(0.21 0.02 165);
+  --sidebar-border: oklch(0.88 0.008 165);
+  --sidebar-ring: oklch(0.52 0.13 165);
 
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 @layer base {
@@ -111,7 +113,7 @@
     @apply border-border outline-ring/50;
   }
   html {
-    color-scheme: dark;
+    color-scheme: light;
     scroll-behavior: smooth;
   }
   body {
@@ -121,32 +123,28 @@
     -webkit-font-smoothing: antialiased;
   }
   ::selection {
-    background: oklch(0.78 0.17 165 / 28%);
-    color: oklch(0.98 0.01 165);
+    background: oklch(0.52 0.13 165 / 22%);
+    color: oklch(0.18 0.02 165);
   }
 
-  /* Custom scrollbar for long lists (UI rule) */
   .scroll-area-custom {
     scrollbar-width: thin;
-    scrollbar-color: oklch(1 0 0 / 12%) transparent;
+    scrollbar-color: oklch(0.7 0.01 165 / 40%) transparent;
   }
   .scroll-area-custom::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   .scroll-area-custom::-webkit-scrollbar-thumb {
-    background: oklch(1 0 0 / 12%);
+    background: oklch(0.7 0.01 165 / 35%);
     border-radius: 9999px;
   }
   .scroll-area-custom::-webkit-scrollbar-thumb:hover {
-    background: oklch(1 0 0 / 20%);
+    background: oklch(0.5 0.012 165 / 50%);
   }
 }
 
-/*
-  Reduced motion baseline (emilkowalski + impeccable):
-  gentler, not zero. Strip transform motion; keep opacity/color crossfades.
-*/
+/* Reduced motion baseline: gentler, not zero */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -158,7 +156,7 @@
   }
 }
 
-/* Single marquee (one per page). Pauses on hover, halts under reduced motion. */
+/* Single marquee per page. Pauses on hover, halts under reduced motion. */
 @keyframes marquee-x {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -174,18 +172,12 @@
   .marquee-track { animation: none; }
 }
 
-/* Mesh node pulse (used by the static fallback + the hero canvas overlay) */
-@keyframes mesh-node-pulse {
-  0%, 100% { opacity: 0.55; }
-  50% { opacity: 1; }
-}
-
 /* Subtle grain overlay for depth (fixed, pointer-events-none, per taste-skill) */
 .grain-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.028;
   z-index: 1;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -196,20 +188,59 @@
   font-feature-settings: "tnum";
 }
 
-/* Faint grid background for the hero (technical/infra vibe) */
+/* Faint grid background for the hero (technical/infra vibe) — light variant */
 .grid-bg {
   background-image:
-    linear-gradient(to right, oklch(1 0 0 / 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 0.035) 1px, transparent 1px);
+    linear-gradient(to right, oklch(0.5 0.02 165 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.5 0.02 165 / 0.06) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 75%);
 }
 
-/* Code block syntax highlighting tokens (warm-on-dark, no rainbow) */
-.tok-key { color: oklch(0.78 0.17 165); }
-.tok-str { color: oklch(0.82 0.1 95); }
-.tok-num { color: oklch(0.78 0.13 250); }
+/* Code block syntax highlighting tokens (warm-on-light, no rainbow) */
+.tok-key { color: oklch(0.45 0.13 165); }
+.tok-str { color: oklch(0.45 0.12 60); }
+.tok-num { color: oklch(0.45 0.13 280); }
 .tok-com { color: oklch(0.55 0.01 165); font-style: italic; }
-.tok-punc { color: oklch(0.7 0.005 165); }
-.tok-prop { color: oklch(0.88 0.01 165); }
+.tok-punc { color: oklch(0.5 0.01 165); }
+.tok-prop { color: oklch(0.3 0.02 165); }
+
+/*
+  3D card scene — CSS perspective + preserve-3d.
+  The card lives in a 3D space; rotateY animates the flip on hover/autoplay.
+  Front = agent identity; back = capabilities. Gated to hover-capable pointers
+  for the hover-trigger; reduced motion disables autoplay.
+*/
+.card-scene {
+  perspective: 1400px;
+  position: relative;
+}
+.card-3d {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 900ms cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+.card-3d.is-flipped {
+  transform: rotateY(180deg);
+}
+.card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.card-back {
+  transform: rotateY(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-3d {
+    transition: none;
+  }
+}

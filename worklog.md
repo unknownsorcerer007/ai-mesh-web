@@ -242,3 +242,31 @@ Stage Summary:
 - 11 distinct layout families (no hero→3-features→CTA→footer fingerprint)
 - Top-notch animations: signature animated mesh graph (nodes pulse + packets travel + heartbeat), scroll-reveals, count-free stat-led, interactive block grid, magnetic CTA (spring), code copy, approval flow — all reduced-motion aware, transform/opacity-only
 - Lint clean, dev log clean (200s only), browser errors empty
+
+---
+Task ID: 8
+Agent: main
+Task: v2 redesign — 10X better, real codebase content, light palette, new 3D Agent Card section
+
+Work Log:
+- Read user feedback: (1) make 10X better, (2) pura codebase read karke real info website par (abhi scattered hai), (3) naya Agent Card section — 3D rotate card + side offer panel (design baad mein), (4) light colour palette, (5) different experiments
+- Read FIXES_APPLIED.md (18 real security fixes), extracted 18 MCP tools verbatim from src/blocks/mcp/universal.ts, CLI commands from aimesh.sh, REST endpoints from block route files
+- Switched globals.css to LIGHT warm palette: oklch(0.985 0.004 165) off-white bg, deeper emerald oklch(0.52 0.13 165) for 4.5:1+ contrast on light, tinted neutrals toward hue 165, semi-transparent dark borders. impeccable light-mode rules (no pure white, tint toward brand hue, 3-step surface scale)
+- Redesigned logo.svg + favicon.svg for light theme (dark mesh mark on emerald, wordmark dark)
+- Regenerated og.png for light theme via image-generation skill
+- Built SIGNATURE 3D Agent Card section: CSS perspective + preserve-3d + rotateY flip. Front = agent identity (Codex Ops, dark mesh header, robot icon, Agent/Transport/Groups/Approvals rows). Back = capabilities (send_message 60/min, create_group 10/hour, etc.). Hover flips (hover-capable pointers), tap-to-flip button (touch). Cursor-follow tilt (spring-smoothed, hover-gated, reduced-motion disabled). Side offer panel: "Founding agent offer" with 4 real perks + Reserve slot button
+- Built McpTools section: 6-group grid of all 18 real MCP tools (connect, send_message, create_group, submit_approval, read_local_messages, translate_message, etc.) with verbatim per-tool rate limits
+- Built SecurityFixes section: 3-column (Critical/High/Medium) of all 18 real fixes from FIXES_APPLIED.md (token blacklist repair, per-connection MCP identity, webhook signatures, token-in-hash-fragment, async logging, etc.) with before-state
+- Built CliApi section: tabbed CLI/REST — 11 real aimesh commands + 15 real REST endpoints with method badges
+- Updated MeshGraph colors to deeper emerald for light-theme contrast
+- Updated Nav scroll-blur bg to light oklch
+- Fixed: themeColor moved to viewport export (Next 16 requirement), 3D card height collapse (added explicit width/height 100% to .card-3d + .card-face)
+- Page now has 14 distinct layout families (was 11) — added McpTools, SecurityFixes, CliApi, AgentCard
+- Verified with Agent Browser + VLM: light theme confirmed (bg lab(98.3%)), hero excellent (warm off-white, emerald readable, mesh visible, no clipping), all 15 sections fully rendered no defects, 3D card flip works (front→back confirmed by VLM), mobile 375px responsive, sticky footer (mt-auto+flex-col), lint clean, console empty
+
+Stage Summary:
+- v2 AI Mesh landing: light warm theme, 14 layout families, 4 new sections with REAL codebase content (18 MCP tools, 18 security fixes, CLI, REST API)
+- Signature 3D Agent Card section with flip + cursor tilt + side offer panel (placeholder for launch, design TBD with user)
+- Deeper emerald accent on warm off-white — ownable, NOT AI-slop, light per user request
+- Block architecture still preserved exactly (12 blocks + core + shared by real names)
+- Lint clean, dev log clean, browser errors empty, VLM-verified all sections
