@@ -184,3 +184,61 @@ Stage Summary:
 - Motivated animations: hero stagger reveal, scroll-reveal stagger, count-up stat, drawing timeline, magnetic CTA (spring), marquee, accordion grid-rows, timer ring depletion
 - All animations respect prefers-reduced-motion; hover gated where relevant
 - Lint clean, dev log clean, browser errors empty
+
+---
+Task ID: 6-a
+Agent: Explore (ai-mesh repo)
+Task: Deep-read ai-mesh repo to understand architecture + product for redesign
+
+Work Log:
+- Read /home/z/my-project/worklog.md to understand context (4 design skills installed + DESIGN-REFERENCE.md + Halcyon demo built; now receiving user's real repo for redesign)
+- Listed /tmp/ai-mesh root: README.md, ARCHITECTURE.md, CONTRIBUTING.md, BUG_REPORT.md, FIXES_APPLIED.md, docs/{DEPLOY.md, MCP-SETUP.md}, package.json, tsconfig.json, Dockerfile, docker-compose.yml, 4 shell scripts (aimesh.sh, start.sh, start-prod.sh, monitor.sh, stress-test.sh), public/ (index.html 1196 lines + icons/{logo.svg, logo-dark.svg, favicon.svg, favicon.png}), src/ (full block architecture)
+- Read README.md fully (523 lines) — product summary, quickstart, architecture diagram, MCP integration (OpenClaw/Claude Code/Codex config), 18 MCP tools table, full REST API endpoint tables (auth/groups/messages/webhooks/approval/threading/search/reactions/notifications/logs/system), env vars, security model, tech stack table, project structure, deployment (Railway/Docker/VPS), roadmap
+- Read ARCHITECTURE.md fully (250 lines) — block architecture design principles, 3-layer diagram (Core/Shared/Block), block dependency DAG map, per-block details (purpose/depends/exports/routes/health), message flow (ephemeral), health check JSON example, "how to update a single block" + "how to add a new block"
+- Read CONTRIBUTING.md (112 lines) + docs/MCP-SETUP.md (145 lines) + docs/DEPLOY.md (224 lines, Supabase/Railway/VPS options)
+- Read package.json — exact deps: fastify ^5.3.3, @fastify/{cookie,cors,session,websocket}, @modelcontextprotocol/sdk ^1.29.0, arctic ^3.6, better-sqlite3 ^11.8, nats ^2.29, nats.ws, tweetnacl, zod ^3.24, pino, nanoid, ws, fast-deep-equal; dev: tsx, typescript ^5.8, vitest. Node >=20, ESM ("type":"module"), 4 bin entries (ai-mesh, ai-mesh-mcp, ai-mesh-ui, ai-mesh-cli)
+- Read src/index.ts (191 lines) — orchestrator: Fastify app, CORS+websocket plugins, security headers hook, Content-Type validation, 1MB body limit + 16KB message limit, static index.html serve (cached at startup), /health (details hidden in prod), /api, all 11 blocks registered in try/catch (fault isolation), NATS relay optional connect, graceful shutdown
+- Read src/core/{config.ts (145, env validation + production checks), health.ts (91, per-block health registry with 5s timeout + worst-status aggregation), errors.ts}
+- Read src/shared/db.ts (226 lines) — SQLite WAL, schema: users, groups, group_members, join_requests, messages, pending_messages, webhook_tokens, etc.
+- Read src/blocks/mcp/universal.ts (630 lines) — universal MCP server (stdio/SSE/StreamableHTTP), per-tool rate limits (send_message 60/min, create_group 10/hour, etc.), per-connection auth context, 18 MCP tools
+- Read src/blocks/auth/index.ts, relay/index.ts (exports: connectRelay, publishToGroup, subscribeToGroup, ensureConsumer, getPendingMessages, getPendingCount, etc.), health.ts
+- Mapped full src/ tree with line counts (44 TS files + 4 SVG/HTML public assets): core (3 files), shared (6 files), blocks/{auth(3), groups(1), messages(1), relay(6), security(4), mcp(7), logs(1), webhooks(1), approval(1), threading(1), search(1), reactions(1), notifications(3)}, tui(1), index.ts
+- Read current landing page public/index.html (1196 lines): Navbar → Hero (animated mesh SVG + 4 stats: 20+ MCP Agents, <1ms Latency, 100% Delivery, E2E Verified) → Integration Rails marquee (Claude Code, OpenClaw, Codex, GitHub, GitLab, Slack, NATS, Docker, Railway / MCP Protocol, SQLite, Ed25519, Fastify, WebSocket, HMAC-SHA256) → Features (6 cards) → How it works (3 steps) → Code example (claude_desktop_config.json) → Auth card → CTA → Footer → then hidden dashboard SPA (topbar, sidebar group list, chat area, messages, modals)
+- Read SVG logo files (via bash since Read rejected them): logo.svg + logo-dark.svg identical — 200×40 viewBox, purple→indigo gradient rounded square (#8b5cf6→#6366f1) containing 5 mesh nodes (white circles) connected by lines + center pulse, text "AI Mesh" Inter 800. favicon.svg — 32×32 same mesh concept. favicon.png 485 bytes also exists.
+- Read Dockerfile (multi-stage, node:22-slim, downloads NATS v2.10.22 binary, USER node non-root, HEALTHCHECK on :3737/health), docker-compose.yml (nats:2.14-alpine internal-only + authenticated, ai-mesh exposes 3737), start.sh/start-prod.sh/aimesh.sh (CLI wrapper with jq-escaped JSON), monitor.sh, stress-test.sh (500 req / 50 concurrency target)
+- Read FIXES_APPLIED.md (171 lines, 18 fixes) + BUG_REPORT.md head — confirms security-hardening story (token blacklist, per-instance MCP auth, webhook signatures, token-in-hash-fragment, async logging, type safety)
+- Diffed root /public/index.html (1196 lines, SEO-rich, served in production Docker) vs src/public/index.html (841 lines, older dev fallback) — root is the canonical production landing page
+
+Stage Summary:
+- AI Mesh = real-time communication platform for AI agents, MCP-native, "Like Slack but AI-first". Connects Claude Code, Codex, OpenClaw, Gemini + any MCP-compatible agent. Open source MIT, self-hosted.
+- Tech stack exact: Node 20+ / TypeScript strict ESM / Fastify v5 / better-sqlite3 (WAL) / NATS JetStream (nats 2.29) / @modelcontextprotocol/sdk 1.29 / arctic (GitHub OAuth) / tweetnacl (Ed25519) / @fastify/websocket / Zod / pino / nanoid
+- BLOCK ARCHITECTURE (the thing not to break): 3-layer DAG — Core (config/errors/health) → Shared pure (db/types/translate/result/validation/realtime) → 12 independent Blocks (auth, security, groups, messages, relay, mcp, logs, webhooks, approval, threading, search, reactions, notifications) + tui. Each block owns its domain, registers its own routes + health check, is wrapped in try/catch at registration (fault isolation). CRITICAL invariant: REST routes and MCP tools call the SAME block domain functions so the two layers can never drift. Blocks form a DAG (no circular imports). 18 MCP tools exposed. Health aggregated at /health (block details hidden in prod).
+- Current visual identity: dark theme #09090b bg, purple accent #8b5cf6→#6366f1 gradient, Inter + JetBrains Mono fonts, glassmorphism, animated mesh-network SVG (nodes + connecting lines + data packets) as hero centerpiece. Logo = gradient rounded square with 5 mesh nodes connected by lines + center pulse dot + "AI Mesh" wordmark.
+- Full detailed report returned as final message.
+
+---
+Task ID: 7
+Agent: main
+Task: Redesign AI Mesh (MCP server) landing page from scratch with top-notch UI + professional animations, respecting block architecture
+
+Work Log:
+- Cloned https://github.com/unknownsorcerer007/ai-mesh, fetched current live site HTML
+- Launched Explore agent (Task 6-a) for deep repo read: mapped full src/ tree (44 TS files), 12-block architecture, tech stack (Fastify+NATS+SQLite+MCP SDK 1.29), 18 MCP tools, real metrics (16KB/7-day/120-per-min/<1s), verbatim config snippets
+- Identified current visual identity: AI-slop violet (#8b5cf6) on zinc-950, Inter font — flagged by design skills as monoculture
+- Design Read: Brand register, dials 7/7/5, Committed color strategy, emerald-on-warm-near-black OKLCH palette (ownable, NOT AI-purple)
+- Designed new logo.svg + favicon.svg from scratch: mesh graph (4 outer nodes + central relay + edges) in emerald on dark rounded square — evolved the brand metaphor, kept it vector/crisp
+- Generated OG brand image via image-generation skill (dark mesh topology, emerald signal glow)
+- Built 11 section components + signature animated MeshGraph (6 agent nodes orbiting central NATS relay, 6 data packets traveling edges with glow filter, pulsing nodes, heartbeat ring — all reduced-motion aware)
+- Built ParitySplit (REST ⇄ MCP both call same block functions — the superpower), BlockArchitecture (interactive 15-cell grid with health-pulse dots + detail panel — preserves exact block names: auth, security, groups, messages, relay, mcp, approval, threading, search, reactions, webhooks, logs, notifications, config, db)
+- Fixed: hydration mismatch from Math.cos/sin float serialization → precomputed rounded node coordinates
+- Added metadataBase to clear OG warning
+- Verified with Agent Browser: page 200, no console errors/warnings/hydration issues, block architecture click works, code tabs switch (Claude/Codex/Remote), copy button → "Copied", mobile 375px responsive, sticky footer (mt-auto+flex-col+min-h-screen)
+- Verified with VLM: hero excellent (emerald mesh visible, headline readable, stats visible, professional+distinctive NOT AI-slop), full page no defects across all 11 sections
+
+Stage Summary:
+- Production-ready AI Mesh landing at / route, redesigned from scratch
+- Block architecture preserved exactly (12 blocks + core + shared by real names), REST⇄MCP parity featured
+- New emerald mesh logo + favicon (vector, ownable), OG image generated
+- 11 distinct layout families (no hero→3-features→CTA→footer fingerprint)
+- Top-notch animations: signature animated mesh graph (nodes pulse + packets travel + heartbeat), scroll-reveals, count-free stat-led, interactive block grid, magnetic CTA (spring), code copy, approval flow — all reduced-motion aware, transform/opacity-only
+- Lint clean, dev log clean (200s only), browser errors empty

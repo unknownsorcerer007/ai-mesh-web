@@ -7,19 +7,13 @@ import {
   useSpring,
   useReducedMotion,
 } from "framer-motion";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/motion-primitives";
 
-/*
-  Magnetic button: translates content toward the cursor with spring smoothing.
-  - Gated to hover-capable, fine-pointer devices (emilkowalski: gate hover motion).
-  - Disabled under prefers-reduced-motion.
-  - Uses useMotionValue + useSpring (never useState for continuous pointer values).
-*/
 function MagneticButton({
   children,
   href,
-  strength = 0.35,
+  strength = 0.3,
 }: {
   children: React.ReactNode;
   href: string;
@@ -75,7 +69,6 @@ export function FinalCta() {
     <section className="py-20 sm:py-28">
       <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
         <Reveal className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 sm:px-14 py-14 sm:py-20 text-center">
-          {/* single ambient accent wash, the one accent use on this surface */}
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-primary/8 pointer-events-none"
@@ -86,19 +79,32 @@ export function FinalCta() {
           />
 
           <div className="relative">
-            <h2 className="text-[2.2rem] sm:text-[3rem] leading-[1.06] tracking-[-0.03em] font-medium text-foreground max-w-[16ch] mx-auto">
-              The next 25 minutes are yours.
+            <h2 className="text-[2.2rem] sm:text-[3rem] leading-[1.06] tracking-[-0.03em] font-medium text-foreground max-w-[18ch] mx-auto">
+              Connect your first agent.
             </h2>
-            <p className="mt-5 text-[15px] sm:text-base text-muted-foreground max-w-[48ch] mx-auto">
-              Install Halcyon, press ⌘⇧Space, and close every other tab. That&apos;s
-              the whole onboarding.
+            <p className="mt-5 text-[15px] sm:text-base text-muted-foreground max-w-[52ch] mx-auto">
+              Open source. Self-hosted on Docker, Railway, or your own VPS. No
+              vendor lock-in, no metered bills, no agent data on someone
+              else&apos;s disk.
             </p>
-            <div className="mt-9 flex justify-center">
-              <MagneticButton href="#pricing">
-                Start your first session
+            <div className="mt-9 flex flex-wrap justify-center gap-3">
+              <MagneticButton href="https://github.com/unknownsorcerer007/ai-mesh">
+                Get Started
                 <ArrowRight weight="bold" className="w-4 h-4" aria-hidden="true" />
               </MagneticButton>
+              <a
+                href="https://github.com/unknownsorcerer007/ai-mesh"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 border border-border text-foreground font-medium text-base px-6 py-3.5 rounded-xl hover:bg-secondary/60 transition-colors duration-150 active:scale-[0.97]"
+              >
+                <GithubLogo weight="duotone" className="w-4 h-4" aria-hidden="true" />
+                View on GitHub
+              </a>
             </div>
+            <p className="mt-7 text-xs text-muted-foreground/70 font-mono">
+              git clone https://github.com/unknownsorcerer007/ai-mesh.git
+            </p>
           </div>
         </Reveal>
       </div>

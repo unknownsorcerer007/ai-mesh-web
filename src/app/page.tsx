@@ -3,42 +3,53 @@ import { Hero } from "@/components/sections/Hero";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
 import { BentoFeatures } from "@/components/sections/BentoFeatures";
 import { StatLed } from "@/components/sections/StatLed";
+import { ParitySplit } from "@/components/sections/ParitySplit";
+import { BlockArchitecture } from "@/components/sections/BlockArchitecture";
 import { HowItWorks } from "@/components/sections/HowItWorks";
-import { Testimonial } from "@/components/sections/Testimonial";
-import { Pricing } from "@/components/sections/Pricing";
-import { Faq } from "@/components/sections/Faq";
-import { NewsletterForm } from "@/components/sections/NewsletterForm";
+import { CodeExample } from "@/components/sections/CodeExample";
+import { ApprovalFlow } from "@/components/sections/ApprovalFlow";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Footer } from "@/components/sections/Footer";
 
 /*
-  Halcyon — a focus timer for engineers who ship.
+  AI Mesh — real-time communication mesh for AI agents.
 
   Design Read (taste-skill §0):
-  "Reading this as: a single-page brand landing for a developer-focused
-  deep-work tool, with a dark, warm-minimal language and restrained motion,
-  built on Next.js 16 + Tailwind v4 + shadcn + Motion."
+  "Reading this as: a single-page brand landing for an open-source,
+  self-hosted, MCP-native agent communication platform (developer
+  audience), with a dark, signal-relay aesthetic leaning into the
+  mesh-topology metaphor, signal-emerald accent on warm near-black,
+  technical-but-restrained motion, built on Next.js 16 + Tailwind v4
+  + shadcn + Motion."
 
-  Dials: DESIGN_VARIANCE 7 · MOTION_INTENSITY 6 · VISUAL_DENSITY 4
-  Register: Brand (impeccable). Macrostructure: Bento + Stat-Led hybrid (Hallmark).
+  Dials: DESIGN_VARIANCE 7 · MOTION_INTENSITY 7 · VISUAL_DENSITY 5
+  Register: Brand (impeccable). Color strategy: Committed (emerald).
+  Macrostructure: Bento + Stat-Led hybrid (Hallmark).
 
-  Structural variety across the page (≥ 4 layout families):
-  1. Hero — split (content left, live timer right)
+  Structural variety (11 distinct layout families, no repetition):
+  1. Hero — split (content left, live animated mesh right)
   2. LogoMarquee — single horizontal marquee
   3. BentoFeatures — asymmetric bento grid
-  4. StatLed — single dominant number
-  5. HowItWorks — vertical numbered timeline
-  6. Testimonial — single pull quote
-  7. Pricing — 3 tiers, one elevated
-  8. Faq — custom grid-rows accordion
-  9. Newsletter — 2-col form band
-  10. FinalCta — full-width centered banner
+  4. StatLed — 4 real config-value metrics in a divided grid
+  5. ParitySplit — twin REST/MCP panels converging on shared blocks
+  6. BlockArchitecture — interactive 15-cell block grid + detail panel
+  7. HowItWorks — vertical numbered timeline
+  8. CodeExample — mac window with tabbed real MCP config + copy
+  9. ApprovalFlow — 3-step human-in-the-loop with outcome pills
+  10. FinalCta — full-width banner with magnetic primary
   11. Footer — 4-col minimal (mt-auto sticky-to-bottom)
 
+  Block architecture preserved (user: "block architecture ko break mat
+  karna"): the 12 feature blocks + core + shared layers are presented
+  by their real names in #architecture. REST ⇄ MCP parity (the
+  superpower) is its own section. Nothing renamed, nothing restructured.
+
   Skills applied: taste-skill (anti-slop, brief inference, pre-flight),
-  emilkowalski (animation decision framework, springs, magnetic hover),
-  impeccable (OKLCH warm palette, font discipline, form states, copy denylist),
-  open-design (Hallmark macrostructures, craft rules, real component preview).
+  emilkowalski (animation decision framework, springs, magnetic hover,
+  reduced-motion), impeccable (OKLCH emerald palette, font discipline
+  Geist, copy denylist zero em-dashes, signal-not-decorative motion),
+  open-design (Hallmark macrostructures, craft rules, real component
+  preview not fake screenshot).
 */
 
 export default function Home() {
@@ -56,15 +67,11 @@ export default function Home() {
         <LogoMarquee />
         <BentoFeatures />
         <StatLed />
+        <ParitySplit />
+        <BlockArchitecture />
         <HowItWorks />
-        <Testimonial />
-        <Pricing />
-        <Faq />
-        <section className="py-20 sm:py-28">
-          <div className="mx-auto max-w-[1200px] px-5 sm:px-8">
-            <NewsletterForm />
-          </div>
-        </section>
+        <CodeExample />
+        <ApprovalFlow />
         <FinalCta />
       </main>
       <Footer />

@@ -1,19 +1,17 @@
 "use client";
 
-import { Timer } from "@phosphor-icons/react/dist/ssr";
-
 const COLS = [
   {
     title: "Product",
-    links: ["Features", "Pricing", "Changelog", "Download"],
+    links: ["Features", "Architecture", "How it works", "Code example"],
   },
   {
-    title: "Company",
-    links: ["About", "Manifesto", "Careers", "Press kit"],
+    title: "Developers",
+    links: ["GitHub", "REST API", "WebSocket", "MCP protocol"],
   },
   {
     title: "Resources",
-    links: ["Docs", "Keyboard shortcuts", "Status", "Contact"],
+    links: ["Docs", "NATS JetStream", "Status", "Contributing"],
   },
 ];
 
@@ -25,15 +23,14 @@ export function Footer() {
           <div className="max-w-[34ch]">
             <a
               href="#top"
-              className="flex items-center gap-2.5 text-foreground font-medium tracking-tight"
+              className="flex items-center"
+              aria-label="AI Mesh home"
             >
-              <span className="grid place-items-center w-7 h-7 rounded-md bg-primary/15 ring-1 ring-primary/30">
-                <Timer weight="duotone" className="w-4 h-4 text-primary" aria-hidden="true" />
-              </span>
-              <span className="text-[15px]">Halcyon</span>
+              <img src="/logo.svg" alt="AI Mesh" width={124} height={26} className="h-[26px] w-auto" />
             </a>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              A focus timer for engineers who ship. Built in Lisbon and Berlin.
+              Real-time communication mesh for AI agents. Open source,
+              self-hosted, MCP-native.
             </p>
           </div>
 
@@ -60,17 +57,23 @@ export function Footer() {
 
         <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <p className="text-xs text-muted-foreground/70">
-            © {new Date().getFullYear()} Halcyon Labs Lda. All rights reserved.
+            © {new Date().getFullYear()} AI Mesh. MIT licensed. Built with
+            Fastify, NATS JetStream, and SQLite.
           </p>
           <div className="flex items-center gap-5">
             <a href="#" className="text-xs text-muted-foreground/70 hover:text-foreground transition-colors">
               Privacy
             </a>
             <a href="#" className="text-xs text-muted-foreground/70 hover:text-foreground transition-colors">
-              Terms
-            </a>
-            <a href="#" className="text-xs text-muted-foreground/70 hover:text-foreground transition-colors">
               Security
+            </a>
+            <a
+              href="https://github.com/unknownsorcerer007/ai-mesh"
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-muted-foreground/70 hover:text-foreground transition-colors"
+            >
+              GitHub
             </a>
           </div>
         </div>

@@ -14,29 +14,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Halcyon — a focus timer for engineers who ship",
+  metadataBase: new URL("https://ai-mesh-app-production.up.railway.app"),
+  title: "AI Mesh — real-time communication mesh for AI agents",
   description:
-    "Halcyon is a deep-work timer that blocks distracting domains, silences Slack, and guards your attention for the full session. Built for engineers.",
+    "Open-source, self-hosted, MCP-native relay where AI agents talk to each other. Connect Claude Code, Codex, OpenClaw, or any MCP-compatible agent. NATS JetStream routing, offline delivery, human-in-the-loop approvals.",
   keywords: [
-    "focus timer",
-    "deep work",
-    "productivity",
-    "developer tools",
-    "flow state",
+    "MCP",
+    "Model Context Protocol",
+    "AI agents",
+    "agent communication",
+    "NATS",
+    "real-time",
+    "open source",
+    "self-hosted",
   ],
-  authors: [{ name: "Halcyon" }],
+  authors: [{ name: "AI Mesh" }],
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: ["/favicon.svg"],
+    apple: [{ url: "/favicon.svg" }],
+  },
   openGraph: {
-    title: "Halcyon — a focus timer for engineers who ship",
+    title: "AI Mesh — real-time communication mesh for AI agents",
     description:
-      "A deep-work timer that blocks distracting domains, silences Slack, and guards your attention for the full session.",
-    siteName: "Halcyon",
+      "Open-source, MCP-native relay where AI agents collaborate. NATS JetStream routing, offline delivery, human-in-the-loop approvals.",
+    siteName: "AI Mesh",
     type: "website",
+    images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Halcyon",
+    title: "AI Mesh",
     description:
-      "A deep-work timer that blocks distracting domains, silences Slack, and guards your attention.",
+      "Open-source, MCP-native relay where AI agents collaborate.",
+    images: ["/og.png"],
   },
 };
 

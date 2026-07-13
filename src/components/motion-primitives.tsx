@@ -4,20 +4,18 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
 /*
-  Shared motion primitives.
-  Source: emilkowalski-skill (animation decision framework, ease-out on entry,
-  never scale(0), reduced-motion gentler-not-zero) + taste-skill §5.C
-  (scroll-reveal stagger canonical skeleton) + impeccable (animate.md
-  300-500ms entrances, ease-out-quart curves).
+  Shared motion primitives for AI Mesh.
+  emilkowalski-skill: ease-out on entry, never scale(0), reduced-motion gentler-not-zero.
+  taste-skill §5.C: scroll-reveal stagger canonical skeleton.
+  impeccable animate.md: 300-500ms entrances, ease-out-quart curves.
 */
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
 
-/** Fade + rise on scroll into view. Fires once. */
 export function Reveal({
   children,
   delay = 0,
-  y = 16,
+  y = 18,
   className,
   as = "div",
 }: {
@@ -42,7 +40,6 @@ export function Reveal({
   );
 }
 
-/** Stagger container + item. Use for lists/grids. */
 export function StaggerGroup({
   children,
   className,
@@ -55,9 +52,7 @@ export function StaggerGroup({
   const reduce = useReducedMotion();
   const container: Variants = {
     hidden: {},
-    show: {
-      transition: { staggerChildren: reduce ? 0 : stagger },
-    },
+    show: { transition: { staggerChildren: reduce ? 0 : stagger } },
   };
   return (
     <motion.div
@@ -97,7 +92,6 @@ export function StaggerItem({
   );
 }
 
-/** Hero load reveal. Staggers children on mount (not scroll). */
 export function HeroReveal({
   children,
   className,
