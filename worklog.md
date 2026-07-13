@@ -160,3 +160,27 @@ Stage Summary:
 - All 4 design skills installed, explored, and consolidated into a unified reference
 - Awaiting user's GitHub repo link and current website link to begin the production-ready redesign
 - The redesign will follow the workflow in DESIGN-REFERENCE.md §9 (Redesign Workflow) and pass the Pre-Flight Checklist in §10
+
+---
+Task ID: 5
+Agent: main
+Task: Build a basic website demonstrating all 4 design skills + animations (Halcyon focus-timer landing)
+
+Work Log:
+- Read DESIGN-REFERENCE.md and applied its principles end-to-end
+- Built warm dark OKLCH palette (amber accent oklch(0.78 0.14 70), tinted neutrals toward hue 75, no pure black/white, semi-transparent white borders)
+- Installed @phosphor-icons/react (taste-skill icon guidance: Phosphor over Lucide)
+- Created easing tokens (--ease-out, --ease-in-out, --ease-drawer) in globals.css
+- Added reduced-motion baseline (gentler, not zero) + marquee keyframes + grain overlay + tabular-nums utility
+- Built 11 section components + live working timer + motion primitives + newsletter API route
+- Fixed: CSS custom-variant compile error (removed, used border-color hover instead), Phosphor icon name (RotateCcw → ArrowCounterClockwise), strokeDashoffset undefined animation warning (added initial value), timer ring formula (was inverted), hero italic leading clipping (1.04 → 1.12 + pb-1)
+- Verified with Agent Browser: page 200, all sections render, timer starts/pauses, FAQ toggles, newsletter form error+success states work, POST /api/newsletter 200, mobile responsive (375px), sticky footer (mt-auto + flex-col + min-h-screen)
+- Verified with VLM: no text clipping/overflow, no broken layout, no empty bento cells, footer not overlapping, no contrast problems
+
+Stage Summary:
+- Production-ready single-page landing at / route: Halcyon focus timer
+- Skills applied: taste-skill (brief inference, dials 7/6/4, anti-slop, structural variety, pre-flight), emilkowalski (animation decision framework, springs, magnetic hover, origin-aware, reduced-motion), impeccable (OKLCH warm palette, font discipline Geist, 8 form states, copy denylist zero em-dashes), open-design (Hallmark Bento+Stat-Led macrostructures, craft rules, real component preview not fake screenshot)
+- 11 distinct layout families (no hero→3-features→CTA→footer fingerprint)
+- Motivated animations: hero stagger reveal, scroll-reveal stagger, count-up stat, drawing timeline, magnetic CTA (spring), marquee, accordion grid-rows, timer ring depletion
+- All animations respect prefers-reduced-motion; hover gated where relevant
+- Lint clean, dev log clean, browser errors empty
