@@ -1,0 +1,402 @@
+     1→<h1 align="center">Open Design: The open-source Claude Design alternative</h1>
+     2→
+     3→> 🔥 **Open Design 0.13.0 — _Stay in Flow_ is here.** Long design sessions used to break on every interruption — a run lost its place, a model picker made you guess, an export needed one more detour. 0.13.0 keeps the session alive: resume Codex / OpenCode / Pi / Open Design Cloud runs across turns, pick the right model faster, and hand off screenshot-backed PPTX / PDF without leaving the app. [Download 0.13.0](https://github.com/nexu-io/open-design/releases) · [Release notes](https://github.com/nexu-io/open-design/releases/tag/open-design-v0.13.0)
+     4→>
+     5→> ⚡ **Open Design Cloud — the official model service.** One recharge to use GPT, Claude, Gemini, and DeepSeek inside Open Design: 20+ flagship models, zero config, billed by real token usage. [Try Open Design Cloud](https://open-design.ai/cloud/?utm_source=github&utm_medium=referral&utm_content=readme_try_cloud)
+     6→>
+     7→> 🏅 **The Open Design Fellow program is now open.** If you also believe design should be open — become an Open Design Fellow, shape the product alongside the core team, and help more people take part in defining the future of design. Details → [`MAINTAINERS.md`](MAINTAINERS.md) and [Discord](https://discord.gg/mHAjSMV6gz).
+     8→
+     9→<p align="center">
+    10→  <img src="https://repo-assets.open-design.ai/resources/images/hero.png" alt="Open Design hero banner — the headline &quot;The open-source Claude Design alternative&quot; over a classical scene of columns and robed figures on a digital-code backdrop, with stat cards for design systems, plugins, coding agents, and media providers" width="100%" />
+    11→</p>
+    12→
+    13→<p align="center">
+    14→  <a href="https://open-design.ai/?utm_source=github&utm_medium=referral&utm_content=readme_website">Website</a> ·
+    15→  <a href="https://open-design.ai/?utm_source=github&utm_medium=referral&utm_content=readme_download">Download</a> ·
+    16→  <a href="https://open-design.ai/cloud/?utm_source=github&utm_medium=referral&utm_content=readme_cloud">Open Design Cloud</a> ·
+    17→  <a href="https://discord.gg/mHAjSMV6gz">Discord</a> ·
+    18→  <a href="https://x.com/OpenDesignHQ">Follow @OpenDesignHQ</a>
+    19→</p>
+    20→
+    21→<p align="center">
+    22→  <a href="https://github.com/nexu-io/open-design/releases"><img alt="release" src="https://img.shields.io/github/v/release/nexu-io/open-design?style=flat&color=blueviolet&label=release&include_prereleases&display_name=tag" /></a>
+    23→  <a href="LICENSE"><img alt="license" src="https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat" /></a>
+    24→  <a href="https://discord.gg/mHAjSMV6gz"><img alt="discord" src="https://img.shields.io/discord/1479002485040480266?style=flat&logo=discord&logoColor=white&label=discord&color=5865F2&cacheSeconds=3600" /></a>
+    25→  <a href="QUICKSTART.md"><img alt="quickstart" src="https://img.shields.io/badge/quickstart-3%20commands-green?style=flat" /></a>
+    26→</p>
+    27→
+    28→<p align="center"><b>English</b> · <a href="docs/i18n/README.es.md">Español</a> · <a href="docs/i18n/README.pt-BR.md">Português</a> · <a href="docs/i18n/README.de.md">Deutsch</a> · <a href="docs/i18n/README.fr.md">Français</a> · <a href="docs/i18n/README.zh-CN.md">简体中文</a> · <a href="docs/i18n/README.zh-TW.md">繁體中文</a> · <a href="docs/i18n/README.ko.md">한국어</a> · <a href="docs/i18n/README.ja-JP.md">日本語</a> · <a href="docs/i18n/README.ar.md">العربية</a> · <a href="docs/i18n/README.ru.md">Русский</a> · <a href="docs/i18n/README.uk.md">Українська</a> · <a href="docs/i18n/README.tr.md">Türkçe</a> · <a href="docs/i18n/README.th.md">ภาษาไทย</a></p>
+    29→
+    30→---
+    31→
+    32→## What is Open Design
+    33→
+    34→🎨 **The open-source Claude Design alternative.** &nbsp;🖥️ **Local-first native desktop app for macOS and Windows.** &nbsp;⚡ **Composable skills, brand-grade `DESIGN.md` design systems, and ready-to-use plugins.** &nbsp;🖼️ Generates **web · desktop · mobile prototypes**, **live dashboards / artifacts**, **decks**, **images**, **video**, plus **HyperFrames** motion graphics. 🔒 Sandboxed iframe preview · HTML / PDF / PPTX / MP4 export. &nbsp;🤖 **Runs on Claude Code · OpenClaw · Codex · Cursor · OpenCode · Qwen · Copilot · Amp · Hermes · Kimi · Antigravity and 22 local CLIs**, or any OpenAI-compatible endpoint via BYOK.
+    35→
+    36→Open Design is what you get when the **agent-native** loop Anthropic shipped with Claude Design — discover the brief, lock the direction, stream the artifact, critique, deliver — stops being closed and becomes a **filesystem of skills, design systems, and plugins** that the coding agents already on your laptop can read, write, and remix. Your CLI becomes the design engine, your laptop becomes the studio, and your team's `DESIGN.md` becomes the brand contract.
+    37→
+    38→It's also the **Figma alternative for the agent era** — instead of pushing pixels on a canvas, it delivers single-page artifacts in real CSS, real fonts, real components, exported straight to HTML / PDF / PPTX / MP4 — already shaped by your design system, already runnable inside the agent you use every day.
+    39→
+    40→
+    41→---
+    42→
+    43→## Product tour
+    44→
+    45→A quick look at what Open Design is and what it does. Start from **Home**, orchestrate repeat workflows with **Automation**, distill a brand contract in **Design System**, and extend with **Plugins** and **integrations**; inside any project's **Studio**, the same design system streams out prototypes, live artifacts, HyperFrames, decks, and images.
+    46→
+    47→### Core pages
+    48→
+    49→<table>
+    50→<tr>
+    51→<td valign="top">
+    52→<img src="https://repo-assets.open-design.ai/resources/images/product/home.png" alt="Home page" /><br/>
+    53→<sub><b>Home</b> — the overview entry point. Pick a skill and a design system, type the brief, and kick off everything from one place.</sub>
+    54→</td>
+    55→</tr>
+    56→</table>
+    57→
+    58→<table>
+    59→<tr>
+    60→<td width="50%" valign="top">
+    61→<img src="https://repo-assets.open-design.ai/resources/images/product/automation.png" alt="Automation page" /><br/>
+    62→<sub><b>Automation</b> — orchestrate repetitive design workflows into reusable, schedulable automations.</sub>
+    63→</td>
+    64→<td width="50%" valign="top">
+    65→<img src="https://repo-assets.open-design.ai/resources/images/product/design-system.png" alt="Design System page" /><br/>
+    66→<sub><b>Design System</b> — distill your team's <code>DESIGN.md</code> into a brand contract that shapes every output.</sub>
+    67→</td>
+    68→</tr>
+    69→<tr>
+    70→<td width="50%" valign="top">
+    71→<img src="https://repo-assets.open-design.ai/resources/images/product/plugin.png" alt="Plugin page" /><br/>
+    72→<sub><b>Plugin</b> — browse, install, and distribute workflow plugins to extend generation on demand.</sub>
+    73→</td>
+    74→<td width="50%" valign="top">
+    75→<img src="https://repo-assets.open-design.ai/resources/images/product/integrations.png" alt="Integrations page" /><br/>
+    76→<sub><b>Integrations</b> — connect external systems and MCP tools, and use Open Design from any IDE, script, or automation.</sub>
+    77→</td>
+    78→</tr>
+    79→</table>
+    80→
+    81→### Studio — many artifact types in one project
+    82→
+    83→Inside a project's Studio, the same design system streams out multiple artifact types:
+    84→
+    85→<table>
+    86→<tr>
+    87→<td width="50%" valign="top">
+    88→<img src="https://repo-assets.open-design.ai/resources/images/product/studio-prototype.png" alt="Prototype" /><br/>
+    89→<sub><b>Prototype</b> — single-page HTML artifacts that read your design system and render in a sandboxed iframe, previewable instantly and downloadable as source.</sub>
+    90→</td>
+    91→<td width="50%" valign="top">
+    92→<img src="https://repo-assets.open-design.ai/resources/images/product/studio-hyperframe.png" alt="HyperFrame" /><br/>
+    93→<sub><b>HyperFrame</b> — programmatic motion and animated graphics, rendered to a real MP4 (e.g. 1920×1080 · 30fps).</sub>
+    94→</td>
+    95→</tr>
+    96→<tr>
+    97→<td width="50%" valign="top">
+    98→<img src="https://repo-assets.open-design.ai/resources/images/product/studio-ppt.png" alt="Deck" /><br/>
+    99→<sub><b>Deck</b> — pitch decks you can page through, navigate by keyboard, and export to PPTX / PDF.</sub>
+   100→</td>
+   101→<td width="50%" valign="top">
+   102→<img src="https://repo-assets.open-design.ai/resources/images/product/studio-image.png" alt="Image" /><br/>
+   103→<sub><b>Image</b> — brand-grade images and visual assets, with high-resolution generation and download.</sub>
+   104→</td>
+   105→</tr>
+   106→</table>
+   107→
+   108→---
+   109→
+   110→## Platform Compatibility
+   111→
+   112→> Open Design ships as **skills, a CLI, and an MCP server** that mainstream coding agents consume natively. Once OD is installed, a single `od mcp install <agent>` wires the MCP server into that agent's config, and you call the same tools from inside any agent.
+   113→
+   114→| Coding agent / platform &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Status &nbsp;&nbsp; | One-line MCP server install &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+   115→|---|:---:|---|
+   116→| [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | ✅ Supported | `od mcp install claude` |
+   117→| [Codex CLI](https://github.com/openai/codex) | ✅ Supported | `od mcp install codex` |
+   118→| [DeepSeek Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | ✅ Supported | `od mcp install reasonix` |
+   119→| [Cursor](https://www.cursor.com/cli) | ✅ Supported | `od mcp install cursor` |
+   120→| [VS Code + GitHub Copilot](https://github.com/features/copilot) | ✅ Supported | `od mcp install copilot` |
+   121→| [GitHub Copilot CLI](https://github.com/features/copilot/cli) | ✅ Supported | `od mcp install copilot` |
+   122→| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | ✅ Supported | `od mcp install gemini` |
+   123→| [OpenCode](https://opencode.ai/) | ✅ Supported | `od mcp install opencode` |
+   124→| [OpenClaw](https://github.com/openclaw/openclaw) | ✅ Supported | `od mcp install openclaw` |
+   125→| [Antigravity](https://antigravity.google) | ✅ Supported | `od mcp install antigravity` |
+   126→| [Cline](https://github.com/cline/cline) | ✅ Supported | `od mcp install cline` |
+   127→| [Trae](https://www.trae.ai/) | ✅ Supported | `od mcp install trae` |
+   128→| [Kimi CLI](https://github.com/MoonshotAI/kimi-cli) | ✅ Supported | `od mcp install kimi` |
+   129→| [Kiro](https://kiro.dev) | ✅ Supported | `od mcp install kiro` |
+   130→| [Pi Agent](https://github.com/badlogic/pi-mono) | ✅ Supported | `od mcp install pi` |
+   131→| [Mistral Vibe CLI](https://github.com/mistralai/mistral-vibe) | ✅ Supported | `od mcp install vibe` |
+   132→| [Hermes Agent](https://github.com/nousresearch/hermes-agent) | ✅ Supported | `od mcp install hermes` |
+   133→
+   134→`od mcp install <agent> --print` for a dry-run preview · `--uninstall` to remove · full list with `od mcp install --help`.
+   135→
+   136→<p align="center">
+   137→  <img src="https://repo-assets.open-design.ai/resources/images/coding-agents.png" alt="The 21 coding-agent CLIs Open Design supports — Claude Code · Codex · OpenCode · Hermes · Antigravity · Gemini · Grok Build · Kimi · Cursor Agent · Qwen · Qoder · GitHub Copilot · Pi · Kiro · Kilo · Mistral Vibe · DeepSeek · Reasonix · Aider · Devin · Trae" width="100%" />
+   138→</p>
+   139→
+   140→**No CLI installed?** The BYOK proxy at `POST /api/proxy/{anthropic,openai,azure,google,ollama,senseaudio}/stream` gives you the same loop (no process spawn) — paste `baseUrl` + `apiKey` + `model`, with support for OpenAI, Anthropic, Azure OpenAI, Google Gemini, Ollama, LM Studio, vLLM, or any OpenAI-compatible endpoint. Per-target SSRF protection blocks internal IPs / link-local / CGNAT at the daemon edge.
+   141→
+   142→The adapter contract and stream parsers live in [`apps/daemon/src/agents.ts`](apps/daemon/src/agents.ts). Adding a new CLI is one entry — see [`docs/agent-adapters.md`](docs/agent-adapters.md).
+   143→
+   144→---
+   145→
+   146→## Demo
+   147→
+   148→Four core product categories, all rendered by a coding agent running on your laptop. Click a thumbnail to see the real example.
+   149→
+   150→### 1 · Prototypes — web · desktop · mobile
+   151→
+   152→The default output surface. Single-page HTML artifacts that read your `DESIGN.md` and render in a sandboxed iframe.
+   153→
+   154→<table>
+   155→<tr>
+   156→<td width="50%" valign="top">
+   157→<img src="docs/screenshots/01-entry-view.png" alt="Entry view" /><br/>
+   158→<sub><b>Entry view</b> — pick a skill, pick a design system, type the brief. One surface for prototypes, dashboards, decks, mobile apps, magazine pages.</sub>
+   159→</td>
+   160→<td width="50%" valign="top">
+   161→<img src="docs/screenshots/skills/mobile-onboarding.png" alt="Mobile onboarding" /><br/>
+   162→<sub><b>Mobile prototype</b> — pixel-accurate iPhone 15 Pro chrome, multi-screen flows. The agent never redraws the phone frame; shared device frames live in <code>assets/frames/</code>.</sub>
+   163→</td>
+   164→</tr>
+   165→<tr>
+   166→<td width="50%" valign="top">
+   167→<img src="docs/screenshots/skills/dating-web.png" alt="Web prototype dating-web" /><br/>
+   168→<sub><b>Web prototype</b> — an editorial dashboard with scrollbars, KPIs, and charts. Rendered straight from <code>design-templates/dating-web/</code>.</sub>
+   169→</td>
+   170→<td width="50%" valign="top">
+   171→<img src="docs/screenshots/skills/gamified-app.png" alt="Gamified app" /><br/>
+   172→<sub><b>Mobile app prototype</b> — a three-screen gamified flow with XP ribbons and quest detail. Hand off straight to Cursor / Codex / Claude Code to turn into React/Next/Vue.</sub>
+   173→</td>
+   174→</tr>
+   175→</table>
+   176→
+   177→### 2 · Live artifacts & dashboards
+   178→
+   179→Live dashboards, decision rooms, KPI walls — single-page artifacts that pull data through a tweaks panel and stay editable in place.
+   180→
+   181→<table>
+   182→<tr>
+   183→<td width="50%" valign="top">
+   184→<img src="docs/screenshots/skills/live-dashboard.png" alt="Live dashboard" /><br/>
+   185→<sub><b>Live dashboard</b> — an editable KPI wall whose tweaks panel surfaces the parameters worth nudging. The agent emits a manifest, and the iframe re-renders without a reload.</sub>
+   186→</td>
+   187→<td width="50%" valign="top">
+   188→<img src="docs/screenshots/skills/research-decision-room.png" alt="Decision room" /><br/>
+   189→<sub><b>Decision room</b> — a multi-source briefing artifact for product / research / ops meetings.</sub>
+   190→</td>
+   191→</tr>
+   192→<tr>
+   193→<td width="50%" valign="top">
+   194→<img src="docs/screenshots/skills/github-dashboard.png" alt="GitHub dashboard" /><br/>
+   195→<sub><b>GitHub-style dashboard</b> — repo metrics presented as a live artifact.</sub>
+   196→</td>
+   197→<td width="50%" valign="top">
+   198→<img src="docs/screenshots/skills/flowai-live-dashboard-template.png" alt="Flow live dashboard" /><br/>
+   199→<sub><b>Flow live-dashboard template</b> — a domain-specific KPI template, branded through the active <code>DESIGN.md</code>.</sub>
+   200→</td>
+   201→</tr>
+   202→</table>
+   203→
+   204→### 3 · Decks — magazine decks, weekly updates, pitches
+   205→
+   206→<table>
+   207→<tr>
+   208→<td width="50%" valign="top">
+   209→<img src="docs/screenshots/07-magazine-deck.png" alt="Magazine deck (guizang-ppt)" /><br/>
+   210→<sub><b>Deck mode (guizang-ppt)</b> — magazine layouts, WebGL hero, P0/P1/P2 checklists. Bundled verbatim from <a href="https://github.com/op7418/guizang-ppt-skill"><code>op7418/guizang-ppt-skill</code></a> with its original license preserved.</sub>
+   211→</td>
+   212→<td width="50%" valign="top">
+   213→<img src="docs/screenshots/skills/deck-swiss-international.png" alt="Swiss deck" /><br/>
+   214→<sub><b>Swiss International-style deck</b> — grid-anchored, monochrome accents. One of <b>15 deck templates</b> and <b>36 themes</b> under <code>design-templates/html-ppt-*/</code>.</sub>
+   215→</td>
+   216→</tr>
+   217→</table>
+   218→
+   219→Every deck exports to **HTML** (single file, inlined assets), **PDF** (browser print, deck-aware), **PPTX** (agent-driven skill), **ZIP** (archive), or **Markdown**.
+   220→
+   221→### 4 · Images — `gpt-image-2`, ImageRouter, custom API
+   222→
+   223→<table>
+   224→<tr>
+   225→<td width="20%" valign="top"><img src="https://cms-assets.youmind.com/media/1776662673014_nf0taw_HGRMNDybsAAGG88.jpg" alt="Illustrated city food map" /><br/><sub><b>Illustrated city food map</b><br/>Hand-drawn editorial travel poster</sub></td>
+   226→<td width="20%" valign="top"><img src="https://cms-assets.youmind.com/media/1777453149026_gd2k50_HHCSvymboAAVscc.jpg" alt="Cinematic elevator scene" /><br/><sub><b>Cinematic elevator scene</b><br/>Single-frame editorial still</sub></td>
+   227→<td width="20%" valign="top"><img src="https://cms-assets.youmind.com/media/1777453164993_mt5b69_HHDoWfeaUAEA6Vt.jpg" alt="Cyberpunk anime portrait" /><br/><sub><b>Cyberpunk portrait</b><br/>Profile avatar — neon face text</sub></td>
+   228→<td width="20%" valign="top"><img src="https://cms-assets.youmind.com/media/1776661968404_8a5flm_HGQc_KOaMAA2vt0.jpg" alt="3D stone staircase evolution" /><br/><sub><b>3D stone staircase</b><br/>Hewn-stone infographic</sub></td>
+   229→<td width="20%" valign="top"><img src="https://cms-assets.youmind.com/media/1777453184257_vb9hvl_HG9tAkOa4AAuRrn.jpg" alt="Glamorous portrait" /><br/><sub><b>Glamorous portrait</b><br/>Editorial studio shot</sub></td>
+   230→</tr>
+   231→</table>
+   232→
+   233→**93 ready-to-replicate prompts** live in [`prompt-templates/`](prompt-templates/) — preview thumbnails, full prompt body, target model, aspect ratio, and source attribution. One click drops a brief into the composer.
+   234→
+   235→### 5 · Video & HyperFrames — agent-native motion graphics
+   236→
+   237→**[HyperFrames][hyperframes]** is HeyGen's open-source, agent-native video framework, integrated as a first-class citizen in Open Design. The agent writes HTML + CSS + GSAP, and HyperFrames renders it to a deterministic MP4 via headless Chrome + FFmpeg. Pair it with **Seedance 2.0** for cinematic t2v / i2v, **Veo 3 / Sora 2 / Kling 2** for routed model variants, and **Suno v5 / Lyria 2** for the audio layer.
+   238→
+   239→<table>
+   240→<tr>
+   241→<td width="25%" valign="top"><a href="prompt-templates/video/hyperframes-saas-product-promo-30s.json"><img src="https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/app-showcase.png" alt="SaaS promo" /></a><br/><sub><b>30s SaaS product promo</b> · 16:9 · UI 3D reveals</sub></td>
+   242→<td width="25%" valign="top"><a href="prompt-templates/video/hyperframes-tiktok-karaoke-talking-head.json"><img src="https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/tiktok-follow.png" alt="TikTok karaoke" /></a><br/><sub><b>TikTok karaoke talking-head</b> · 9:16 · TTS + word-synced captions</sub></td>
+   243→<td width="25%" valign="top"><a href="prompt-templates/video/hyperframes-brand-sizzle-reel.json"><img src="https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/logo-outro.png" alt="Brand sizzle reel" /></a><br/><sub><b>30s brand sizzle reel</b> · 16:9 · audio-reactive kinetic type</sub></td>
+   244→<td width="25%" valign="top"><a href="prompt-templates/video/hyperframes-data-bar-chart-race.json"><img src="https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/data-chart.png" alt="Bar chart race" /></a><br/><sub><b>Bar chart race</b> · 16:9 · NYT-style data infographic</sub></td>
+   245→</tr>
+   246→<tr>
+   247→<td width="25%" valign="top"><a href="prompt-templates/video/hyperframes-flight-map-route.json"><img src="https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/nyc-paris-flight.png" alt="Flight map" /></a><br/><sub><b>Flight map</b> · 16:9 · Apple-style route reveal</sub></td>
+   248→<td width="25%" valign="top"><a href="prompt-templates/video/hyperframes-logo-outro-cinematic.json"><img src="https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/logo-outro.png" alt="Logo outro" /></a><br/><sub><b>4s cinematic logo outro</b> · 16:9 · piece-by-piece assembly + bloom</sub></td>
+   249→<td width="25%" valign="top"><a href="prompt-templates/video/hyperframes-money-counter-hype.json"><img src="https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/apple-money-count.png" alt="Money counter" /></a><br/><sub><b>$0 → $10K money counter</b> · 9:16 · Apple-style hype</sub></td>
+   250→<td width="25%" valign="top"><a href="prompt-templates/video/hyperframes-website-to-video-promo.json"><img src="https://static.heygen.ai/hyperframes-oss/docs/images/catalog/blocks/instagram-follow.png" alt="Website to video" /></a><br/><sub><b>Website-to-video</b> · 16:9 · captures the site at 3 viewports</sub></td>
+   251→</tr>
+   252→</table>
+   253→
+   254→11 HyperFrames templates + 39 Seedance prompts ship with the repo. Catalog thumbnails © HeyGen; the framework is Apache-2.0. The OD-specific render workflow (composition cache, sandbox-exec workaround, MP4-as-chip) is detailed in [`design-templates/hyperframes/`](design-templates/hyperframes/).
+   255→
+   256→[hyperframes]: https://github.com/heygen-com/hyperframes
+   257→
+   258→---
+   259→
+   260→## Why Open Design
+   261→
+   262→> **In April 2026, Anthropic released Claude Design — the first time an LLM stopped writing prose and started delivering design artifacts directly.** It went viral. But it stayed closed-source, paid-only, cloud-only, locked to Anthropic's model, Anthropic's skills, Anthropic's surface. No checkout, no self-host, no Vercel deploy, no swap-in-your-own-agent.
+   263→
+   264→Open Design (OD) is the open-source alternative. Same loop, same artifact-first mental model, none of the lock-in:
+   265→
+   266→- 🤖 **Agent-native, model-agnostic.** We don't ship an agent. The `claude` / `codex` / `cursor-agent` / `copilot` / `hermes` / `kimi` already on your `PATH` are the design engine. Swap with one click.
+   267→- 🧠 **Brand-grade by default.** Every render reads the active `DESIGN.md` — a 9-section schema covering palette, type, spacing, motion, voice, anti-patterns. 150 systems ship with the repo (Linear, Stripe, Vercel, Airbnb, Apple, Tesla, Notion, Anthropic, Cursor, Supabase, Figma…). Drop a folder in, the picker finds it.
+   268→- 🖥️ **Local-first, BYOK at every layer.** Native desktop apps for macOS (Apple Silicon + Intel) and Windows (x64). Linux AppImage on the optional release lane. No telemetry, no cloud round-trip. Before describing daemon data paths, contributors and operators MUST read `AGENTS.md` → **Daemon data directory contract**. This README MUST NOT restate it.
+   269→- 🌍 **Composable on three planes.** **Plugins** carry runnable workflows · **skills** carry the agent's design taste · **design systems** carry the brand. All three are plain files anyone can author, version, and publish.
+   270→- 🔁 **Refresh an existing codebase.** Hand a `git` repo + `DESIGN.md` to the agent and it refactors your real components to the brand spec. Dedicated plugins migrate Figma / Pencil workflows into React / Next.js / Vue code.
+   271→- 🔒 **Privacy by conviction.** Everything runs where your data lives — your laptop, your team's server, your Vercel project. When the network is needed, the BYOK proxy is SSRF-guarded.
+   272→
+   273→### Comparison
+   274→
+   275→| | Claude Design | Figma | Lovable / v0 / Bolt | **Open Design** |
+   276→|---|---|---|---|---|
+   277→| Open source | ❌ | ❌ | ❌ | **✅ Apache-2.0** |
+   278→| Self-host / desktop | ❌ | ❌ | ❌ | **✅ macOS + Windows + Vercel** |
+   279→| Agent-native (runs in your CLI) | Anthropic only | ❌ | Cloud agent only | **✅ 22 CLIs + BYOK** |
+   280→| Brand-grade `DESIGN.md` | Proprietary | Theme JSON | Limited tokens | **✅ 150 systems shipped** |
+   281→| Skills / plugins / templates | Closed | Plugin store | Closed | **✅ 100+ skills · 261 plugins** |
+   282→| HyperFrames (HTML→MP4) | ❌ | ❌ | ❌ | **✅ First-class** |
+   283→| Refresh an existing repo to brand | ❌ | ❌ | ❌ | **✅ via agent + `DESIGN.md`** |
+   284→| Minimum billing | Pro / Max / Team | Pro / Org | Pro / Team | **BYOK · any compatible endpoint** |
+   285→
+   286→---
+   287→
+   288→## Quick start
+   289→
+   290→### 🖥️ Download the desktop app (recommended — zero config)
+   291→
+   292→The fastest way to use Open Design. No Node, no pnpm, no clone.
+   293→
+   294→- **macOS** (Apple Silicon · Intel x64) → [**open-design.ai**](https://open-design.ai/?utm_source=github&utm_medium=referral&utm_content=readme_download_macos) or [GitHub Releases](https://github.com/nexu-io/open-design/releases)
+   295→- **Windows** (x64) → [**open-design.ai**](https://open-design.ai/?utm_source=github&utm_medium=referral&utm_content=readme_download_windows) or [GitHub Releases](https://github.com/nexu-io/open-design/releases)
+   296→- **Linux** (AppImage, optional lane) → [GitHub Releases](https://github.com/nexu-io/open-design/releases)
+   297→
+   298→After install: the app auto-detects every coding-agent CLI on your `PATH`, loads 100+ skills and 150 design systems, and lets you type a brief in the entry view.
+   299→
+   300→### 🤖 Install into your coding agent (no UI)
+   301→
+   302→You can use Open Design without ever opening the GUI — call it as a skill, plugin, or MCP server inside Claude Code, Codex, Cursor, Copilot, OpenClaw, Antigravity, Hermes, Kimi, and more.
+   303→
+   304→```bash
+   305→# One-line install into the agent you're using:
+   306→od mcp install <agent>
+   307→# <agent> = claude | codex | reasonix | cursor | copilot | openclaw
+   308→#         | antigravity | gemini | pi | vibe | hermes | cline | kimi
+   309→#         | trae | opencode
+   310→
+   311→# Hosted equivalent for curl-based setup:
+   312→curl -fsSL https://open-design.ai/install.sh | sh -s <agent>
+   313→```
+   314→
+   315→`install.sh` is a thin shell wrapper around `od mcp install`; it exists so the
+   316→hosted URL returns shell instead of the landing-page HTML fallback and fails
+   317→fast if your shell resolves a non-Open-Design `od` binary.
+   318→
+   319→> **WSL2 users:** If your coding-agent CLIs run inside WSL2, follow the
+   320→> [`WSL2 setup guide`](docs/wsl-setup.md) first. Linux's `/usr/bin/od` can
+   321→> shadow Open Design's `od` command.
+   322→
+   323→Then, inside the agent:
+   324→
+   325→```
+   326→> Use open-design to generate a landing page with the Linear design system
+   327→```
+   328→
+   329→The agent reads `skills/`, picks the right `SKILL.md`, binds the `DESIGN.md` you named, and emits an `<artifact>` previewable at `http://localhost:7456`.
+   330→
+   331→### 🐳 Run with Docker
+   332→
+   333→```bash
+   334→git clone https://github.com/nexu-io/open-design.git
+   335→cd open-design/deploy
+   336→cp .env.example .env
+   337→echo "OD_API_TOKEN=$(openssl rand -hex 32)" >> .env
+   338→docker compose up -d
+   339→# open http://localhost:7456
+   340→```
+   341→
+   342→> **macOS users:** If the web UI shows `Authorization: Bearer <OD_API_TOKEN> required`, Docker Desktop bridge networking is the cause. See [Docker Desktop on macOS](deploy/README.md#docker-desktop-on-macos) for the fix.
+   343→
+   344→### 🚀 Deploy on Sealos
+   345→
+   346→[![Deploy on Sealos](https://sealos.io/Deploy-on-Sealos.svg)](https://sealos.io/products/app-store/open-design/)
+   347→
+   348→The Sealos App Store template runs the published Open Design Docker image with persistent workspace storage and Basic Auth on the public proxy. For custom public or shared Docker deployments, follow the reverse-proxy and `OPEN_DESIGN_ALLOWED_ORIGINS` guidance in [`deploy/README.md`](deploy/README.md#local-compose).
+   349→
+   350→### 🧑‍💻 Run from source
+   351→
+   352→```bash
+   353→git clone https://github.com/nexu-io/open-design.git
+   354→cd open-design
+   355→corepack enable && pnpm install
+   356→pnpm tools-dev run web
+   357→```
+   358→
+   359→Node `~24`, pnpm `10.33.x`. WSL2 users, see [`docs/wsl-setup.md`](docs/wsl-setup.md); native Windows users, see [`docs/windows-troubleshooting.md`](docs/windows-troubleshooting.md). Full quickstart, env vars, Nix flake, and packaged build flow → [`QUICKSTART.md`](QUICKSTART.md).
+   360→
+   361→### A full workflow — from brief to artifact
+   362→
+   363→`brief → plugin → direction → design system → artifact → handoff → memory`
+   364→
+   365→1. **A PM submits a brief.** The plugin picker offers landing page · pitch deck · dashboard · social post · PM spec · OKR scorecard…
+   366→2. **A designer (or the agent) locks the direction.** No brand? Pick from 5 curated directions. Have a brand? Drop a screenshot / URL → the agent connects GitHub, imports Figma, and codifies a reusable `DESIGN.md`.
+   367→3. **The agent emits the first `<artifact>`.** Plugin + skill + `DESIGN.md` are bound. It streams into a sandboxed iframe, editable in place — not "regenerate from scratch."
+   368→4. **Hand off to engineering.** The artifact is real HTML/CSS — drop it into Cursor, Codex, or Claude Code to keep building as code. Or export PPTX / PDF / MP4 straight to marketing.
+   369→5. **Open Design gets smarter as you use it.** Your screenshots, fonts, palettes, and confirmed artifacts accumulate as defaults for the next session. Less rework, less drift.
+   370→
+   371→---
+   372→
+   373→## Use Open Design from your coding agent
+   374→
+   375→Open Design ships a **stdio MCP server** and per-agent **install scripts**. Any MCP-compatible agent in another repo can read files from your local Open Design projects directly — tokens CSS, JSX components, entry HTML — as a structured API queryable by name. The agent always sees the live file, not a stale export.
+   376→
+   377→```bash
+   378→# One-line install (16+ CLIs supported):
+   379→od mcp install <agent>
+   380→
+   381→# Then the agent can:
+   382→od search-files "primary button"      # search files across projects
+   383→od get-file design-systems/linear-app/DESIGN.md
+   384→od get-artifact <slug>                # latest rendered artifact
+   385→od plugin run web-prototype --brief "..."
+   386→od skill list --scenario marketing
+   387→```
+   388→
+   389→**Why MCP?** Exporting and re-attaching a zip every iteration breaks flow. MCP exposes the design source directly — the agent always sees the live file.
+   390→
+   391→**For an agent starting from scratch,** the installer places `~/.config/<agent>/open-design.json` (or the platform equivalent) plus a copy-paste MCP snippet. Cursor gets a one-click deeplink; Claude Code gets a `claude mcp add-json` one-liner; every other agent gets JSON in the schema its config expects. Full per-agent flow → **Settings → MCP server** in the desktop app, or [`docs/agent-adapters.md`](docs/agent-adapters.md).
+   392→
+   393→**Security model.** Read-only by default, the daemon binds to `127.0.0.1`, and SSRF is blocked at the proxy edge. LAN exposure requires an explicit `OD_BIND_HOST` plus `OD_ALLOWED_ORIGINS`. Connector credentials and live-artifact preview routes stay loopback-only regardless.
+   394→
+   395→**Internally-hosted model endpoints.** To prevent SSRF, the daemon blocks provider base URLs that resolve to private/internal address ranges (RFC1918, link-local, CGNAT, and cloud-metadata IPs) by default, surfacing `Internal IPs blocked`. If you run an internally-hosted gateway (e.g. LiteLLM or Ollama on a VPN-only `10.x`/`192.168.x` address), opt that host out with `OD_ALLOWED_INTERNAL_HOSTS=<host1>,<host2>,...` — a comma- or whitespace-separated list of bare hostnames or IPs (`10.0.0.5`, `litellm.internal.corp`; a `host:port` or full URL is accepted and reduced to its hostname; IPv6 must be bracketed, e.g. `[fd00::1]`). The allowlist is strict opt-in (empty by default), exact-host (no subdomain/substring matching), and applies **only** to provider endpoints you configure (connection test, model discovery, BYOK chat). It deliberately does **not** relax the guard on download URLs returned inside upstream responses, which stay blocked. A malformed entry — or CIDR notation, which is not supported — is dropped with a warning rather than silently trusted, so a typo never quietly widens (or fails to widen) the guard. Allowlisting a hostname trusts whatever it resolves to (like `OD_ALLOWED_ORIGINS`); allowlist the resolved IP instead if you want the DNS-resolved address re-checked.
+   396→
+   397→---
+   398→
+   399→## Skills
+   400→
+
+[showing lines 1-400 of 764; use offset=401 with limit to continue reading]
