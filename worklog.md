@@ -270,3 +270,29 @@ Stage Summary:
 - Deeper emerald accent on warm off-white — ownable, NOT AI-slop, light per user request
 - Block architecture still preserved exactly (12 blocks + core + shared by real names)
 - Lint clean, dev log clean, browser errors empty, VLM-verified all sections
+
+---
+Task ID: 9
+Agent: main
+Task: Install gh CLI, auth, push fixes to GitHub, full test, explain Antigravity usage
+
+Work Log:
+- ⚠️ Flagged token exposure to user (ghp_... sent in plaintext chat — compromised, must revoke)
+- Flagged architecture: /home/z/my-project is Next.js landing, ai-mesh repo is Fastify MCP server — pushing to ai-mesh would overwrite the real product. Proposed new repo ai-mesh-web instead (user said don't break block architecture)
+- Installed gh CLI 2.63.2 (downloaded binary to ~/.local/bin, no sudo needed)
+- Authenticated as unknownsorcerer007 with the provided token (full repo scope)
+- Re-read codebase: confirmed 14 section components + mesh-graph + motion-primitives + page.tsx all present
+- Ran full test: ESLint clean, but tsc --noEmit OOM'd because tsconfig was scanning the 665MB skills/ folder. Fixed tsconfig exclude (added skills, examples, mini-services, tool-results, download, upload)
+- After exclude, tsc revealed 2 real type errors: (1) mesh-graph EDGES tuple typing — fixed with `as [string, string]` casts; (2) HeroRevealItem missing `as` prop — added `as` to props type matching Reveal
+- Re-ran tsc: exit 0, clean. Re-ran ESLint: clean. Dev server: 200. Browser: title correct, 0 console errors, 0 page errors
+- Wrote README.md documenting the repo, its relationship to ai-mesh, the 14 sections, stack, develop/deploy
+- Created new public repo unknownsorcerer007/ai-mesh-web via `gh repo create --source=. --push`
+- Pushed main branch (145 files on remote, skills/ correctly excluded, .gitignore already covered it)
+- Did NOT touch the ai-mesh repo (block architecture preserved)
+
+Stage Summary:
+- Repo live at https://github.com/unknownsorcerer007/ai-mesh-web (public)
+- 145 files pushed, skills/ excluded, README documents the split
+- Full test green: ESLint clean, tsc exit 0, server 200, browser 0 errors
+- Token still active — user MUST revoke at https://github.com/settings/tokens after confirming push
+- Antigravity usage explained in chat (import repo, Agent Mode, @-mention files, run dev, prompt for changes)
