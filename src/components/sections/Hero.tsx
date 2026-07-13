@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { HeroReveal, HeroRevealItem } from "@/components/motion-primitives";
 import { MeshGraph } from "@/components/mesh-graph";
+import { AuthModal } from "@/components/auth/AuthModal";
 import { ArrowRight, BookOpen } from "@phosphor-icons/react/dist/ssr";
 
 const STATS = [
@@ -12,6 +14,7 @@ const STATS = [
 ];
 
 export function Hero() {
+  const [authOpen, setAuthOpen] = useState(false);
   return (
     <section id="top" className="relative pt-28 sm:pt-24 pb-16 sm:pb-24 overflow-hidden">
       {/* faint grid + radial emerald wash */}
@@ -55,15 +58,14 @@ export function Hero() {
 
             <HeroRevealItem>
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a
-                  href="https://github.com/unknownsorcerer007/ai-mesh"
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  type="button"
+                  onClick={() => setAuthOpen(true)}
                   className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-medium text-[15px] px-5 py-3 rounded-lg transition-transform duration-150 active:scale-[0.97] hover:opacity-90"
                 >
-                  Deploy on GitHub
+                  Get Started
                   <ArrowRight weight="bold" className="w-4 h-4" aria-hidden="true" />
-                </a>
+                </button>
                 <a
                   href="#code"
                   className="inline-flex items-center gap-2 text-[15px] text-foreground border border-border px-5 py-3 rounded-lg hover:bg-secondary/60 transition-colors duration-150 active:scale-[0.97]"
@@ -103,6 +105,8 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} initialMode="signup" />
     </section>
   );
 }

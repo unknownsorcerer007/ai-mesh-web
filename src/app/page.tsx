@@ -8,6 +8,7 @@ import { McpTools } from "@/components/sections/McpTools";
 import { BlockArchitecture } from "@/components/sections/BlockArchitecture";
 import { SecurityFixes } from "@/components/sections/SecurityFixes";
 import { HowItWorks } from "@/components/sections/HowItWorks";
+import { InstallCommand } from "@/components/sections/InstallCommand";
 import { CodeExample } from "@/components/sections/CodeExample";
 import { ApprovalFlow } from "@/components/sections/ApprovalFlow";
 import { CliApi } from "@/components/sections/CliApi";
@@ -81,6 +82,7 @@ export default function Home() {
         <BlockArchitecture />
         <SecurityFixes />
         <HowItWorks />
+        <InstallCommand />
         <CodeExample />
         <ApprovalFlow />
         <CliApi />
