@@ -120,12 +120,15 @@ export function HeroRevealItem({
   children,
   className,
   y = 14,
+  as = "div",
 }: {
   children: ReactNode;
   className?: string;
   y?: number;
+  as?: "div" | "section" | "li" | "article" | "span" | "h1" | "h2";
 }) {
   const reduce = useReducedMotion();
+  const MotionTag = motion[as];
   const item: Variants = {
     hidden: reduce ? { opacity: 0 } : { opacity: 0, y },
     show: {
@@ -135,9 +138,9 @@ export function HeroRevealItem({
     },
   };
   return (
-    <motion.div className={className} variants={item}>
+    <MotionTag className={className} variants={item}>
       {children}
-    </motion.div>
+    </MotionTag>
   );
 }
 

@@ -34,8 +34,8 @@ const RELAY: Node = { id: "relay", x: CX, y: CY, r: 13 };
 
 // Edges: 6 spokes + 6 ring + 2 cross
 const EDGES: [string, string][] = [
-  ...OUTER.map((n) => ["relay", n.id]),
-  ...OUTER.map((n, i) => [n.id, OUTER[(i + 1) % OUTER.length].id]),
+  ...OUTER.map((n) => ["relay", n.id] as [string, string]),
+  ...OUTER.map((n, i) => [n.id, OUTER[(i + 1) % OUTER.length].id] as [string, string]),
   [OUTER[0].id, OUTER[3].id],
   [OUTER[1].id, OUTER[4].id],
 ];
